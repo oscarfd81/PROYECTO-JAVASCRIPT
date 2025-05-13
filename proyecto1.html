@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proyecto1</title>
+    <style>
+         body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding:30px;
+            border-radius: 10px; 
+            box-shadow:  4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+           
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #444;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 20px;
+            resize: none;
+            box-sizing: border-box;
+        }
+
+        #ent {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #ea0d0d; 
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form name="femocion">
+
+        <p>¿Como te encuentras hoy animicamente?</p>
+        <textarea name="entrada" oninput="emoticono()"></textarea>
+
+        <br>
+
+        <p id="ent"></p>
+    </form>
+
+    <script>
+        function emoticono(){
+            let mensaje= document.femocion.entrada.value;
+
+            if(mensaje.includes("feliz")){
+                document.getElementById("ent").innerHTML="😊";
+            }
+            else if(mensaje.includes("triste")){
+                document.getElementById("ent").innerHTML="😢";
+            }
+            else if(mensaje.includes("enojado")){
+                document.getElementById("ent").innerHTML="😠";
+            }
+            else if(mensaje.includes("emocionado")){
+                document.getElementById("ent").innerHTML="🤩";
+            }else{
+                document.getElementById("ent").innerHTML="No se ha detectado ninguna emoción válida. </br> Las emociones válidas hasta el momento serían:  Feliz, Enojeado, Triste y Emocionado";
+            }
+        }
+    </script>
+</body>
+</html>
